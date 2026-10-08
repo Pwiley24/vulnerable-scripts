@@ -4,10 +4,8 @@
 
 set -e
 
-# Wait for other apt/dpkg processes to release the lock
-while pgrep -x unattended-upgr >/dev/null || pgrep -x apt-get >/dev/null || pgrep -x dpkg >/dev/null; do
-  sleep 5
-done
+systemctl stop unattended-upgrades 2>/dev/null || true
+systemctl disable unattended-upgrades 2>/dev/null || true
 
 # Create authorized users
 useradd -m -s /bin/bash sysadmin
