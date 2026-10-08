@@ -4,6 +4,11 @@
 
 set -e
 
+# Wait for other apt/dpkg processes to release the lock
+while pgrep -x unattended-upgr >/dev/null || pgrep -x apt-get >/dev/null || pgrep -x dpkg >/dev/null; do
+  sleep 5
+done
+
 # Create authorized users
 useradd -m -s /bin/bash sysadmin
 echo "sysadmin:Company2023!" | chpasswd
