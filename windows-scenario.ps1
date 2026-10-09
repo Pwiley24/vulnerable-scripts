@@ -7,7 +7,7 @@ $ErrorActionPreference = "Stop"
 $PrimaryUser = "ITAdmin"
 $PrimaryPass = "Company2023!"
 $BackdoorUser = "svc_monitor"
-$BackdoorPass = "SvcMonitor!2024"
+$BackdoorPass = "Updates!2024"
 $LogFile = "C:\setup_log_cyberpatriot.txt"
 $ReadmePath = "$env:PUBLIC\Desktop\README.txt"
 
